@@ -5,6 +5,11 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
+    if (!nav) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
   };
 
   return (
@@ -18,7 +23,7 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "fixed text-gray-300 left-0 top-0 w-full h-screen bg-black/90 px-4 py-7 flex-col z-10"
+            ? "ease-in duration-300 fixed text-gray-300 left-0 top-0 w-full h-screen bg-black/90 px-4 py-7 flex-col z-10"
             : "absolute top-0 h-screen left-[-100%] ease-in duration-500"
         }
       >
